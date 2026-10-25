@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Hammer.Extensions;
 using Hammer.Music;
+using UnityEditor;
 using UnityEngine;
 
 namespace Hammer
@@ -49,6 +50,7 @@ namespace Hammer
                 PlayNext();
         }
 
+        [ContextMenu("Skip")]
         public void Skip()
         {
             if (playlist.Count == 0)

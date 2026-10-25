@@ -28,6 +28,9 @@ namespace Hammer.Nail
         private void Awake()
         {
             rb = GetComponent<Rigidbody>();
+            rb.solverIterations = 12;
+            rb.solverVelocityIterations = 4;
+            
             grabbable = GetComponent<GrabbableWrapper>();
             replacer = GetComponent<ModelReplacer>();
         }
@@ -35,10 +38,14 @@ namespace Hammer.Nail
         public bool Hit(float energy)
         {
             if (IsFullyDriven)
+            {
                 return false;
+            }
 
             if (!isAnchored && !TryAnchor())
+            {
                 return false;
+            }
 
             energy = Mathf.Min(energy, maxImpactEnergy);
             var distance = Mathf.Min(energy * drivePerJoule, length - drivenDistance);

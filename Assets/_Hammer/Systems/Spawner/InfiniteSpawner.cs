@@ -11,8 +11,9 @@ namespace Hammer
         [SerializeField] private bool stopMotionOnSpawn;
         [SerializeField] private float spawnDelay = 1.5f;
 
-        private void Start()
+        private IEnumerator Start()
         {
+            yield return new WaitForSeconds(spawnDelay);
             Spawn();
         }
 

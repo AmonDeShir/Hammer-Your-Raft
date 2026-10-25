@@ -109,5 +109,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afcb72afc1c4cdf478f32a826d4ab48c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BuoyancyPart
-  <Mass>k__BackingField: 5
+  <Mass>k__BackingField: 0.5
   <VolumeCollider>k__BackingField: {fileID: 7553638753922297170}

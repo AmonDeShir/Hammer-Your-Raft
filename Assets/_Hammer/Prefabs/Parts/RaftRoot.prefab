@@ -136,7 +136,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5861713489666428730}
   serializedVersion: 5
-  m_Mass: 20
+  m_Mass: 10
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -226,7 +226,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afcb72afc1c4cdf478f32a826d4ab48c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BuoyancyPart
-  <Mass>k__BackingField: 20
+  <Mass>k__BackingField: 10
   <VolumeCollider>k__BackingField: {fileID: 922068037912891492}
 --- !u!114 &5211769236002621563
 MonoBehaviour:

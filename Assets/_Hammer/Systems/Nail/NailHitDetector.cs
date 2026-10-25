@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 
 namespace Hammer.Nail
 {
@@ -16,7 +16,7 @@ namespace Hammer.Nail
 
             if (!hammer || !hammer.IsHead(other))
                 return;
- 
+            
             if (Time.time - lastHitTime < hitCooldown)
                 return;
 
@@ -24,11 +24,12 @@ namespace Hammer.Nail
 
             if (energy < minEnergy)
                 return;
-
+            
             if (!nail.Hit(energy))
                 return;
 
             lastHitTime = Time.time;
+            hammer.ReportNailHit();
         }
     }
 }

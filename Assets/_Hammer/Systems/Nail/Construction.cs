@@ -1,4 +1,4 @@
-﻿using Hammer.MetaWrappers;
+using Hammer.MetaWrappers;
 using UnityEngine;
 
 namespace Hammer.Nail
