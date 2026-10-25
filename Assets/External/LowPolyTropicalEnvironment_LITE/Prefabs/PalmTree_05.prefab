@@ -254,6 +254,7 @@ GameObject:
   - component: {fileID: 7466204228182692606}
   - component: {fileID: 7246895568558029846}
   - component: {fileID: 2892969033575783383}
+  - component: {fileID: 668363596049658427}
   m_Layer: 0
   m_Name: PalmTree_05_LOD0
   m_TagString: Untagged
@@ -352,5 +353,26 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.3294051, y: 4.123018, z: 0.89399713}
-  m_Center: {x: -0.5011934, y: 2.0408137, z: 0.05800143}
+  m_Size: {x: 0.3317383, y: 0.9437747, z: 0.32267788}
+  m_Center: {x: -0.0023600757, y: 0.45119214, z: 0.0017009825}
+--- !u!65 &668363596049658427
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8375996161227960710}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.25590366, y: 0.53374696, z: 0.32267788}
+  m_Center: {x: -0.13432696, y: 0.82530224, z: 0.0017009825}

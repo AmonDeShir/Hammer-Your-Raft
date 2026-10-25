@@ -27,7 +27,7 @@ namespace Hammer
             if (stopMotionOnSpawn)
             {
                 rigidBody.isKinematic = true;
-                // rigidBody.interpolation = RigidbodyInterpolation.None;
+                rigidBody.interpolation = RigidbodyInterpolation.None;
             }
         }
 
@@ -35,12 +35,11 @@ namespace Hammer
         {
             item.OnGrab -= HandleGrab;
 
-            // if (stopMotionOnSpawn)
-            // {
-            //     var rigidBody = item.GetComponent<Rigidbody>();
-            //     rigidBody.isKinematic = false;
-            //     rigidBody.interpolation = RigidbodyInterpolation.Interpolate;
-            // }
+            if (stopMotionOnSpawn)
+            {
+                var rigidBody = item.GetComponent<Rigidbody>();
+                rigidBody.interpolation = RigidbodyInterpolation.Interpolate;
+            }
 
             StartCoroutine(SpawnDelayed());
         }

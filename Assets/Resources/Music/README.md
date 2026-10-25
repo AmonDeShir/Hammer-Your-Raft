@@ -1,0 +1,2 @@
+Place your own MP3, OGG, or WAV audio files in this folder to include them in the game's soundtrack when building the project for Meta Quest. The tracks will be played in a random order.
+If you'd like to use the tropical soundtrack I originally selected for the game, you can purchase and download [Island Expedition - Cozy Life Essential by Honeydog Music](https://honeydogmusic.itch.io/island-expedition-cozy-life-essential) and place the audio files here before building the game.
