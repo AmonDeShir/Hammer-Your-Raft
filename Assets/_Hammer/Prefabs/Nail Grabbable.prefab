@@ -107,7 +107,7 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -116,8 +116,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.013193582, y: 0.0044846535, z: 0.012855149}
-  m_Center: {x: 0.000051158015, y: 0.07697773, z: 0.00000049592927}
+  m_Size: {x: 0.013193582, y: 0.00962162, z: 0.012855149}
+  m_Center: {x: 0.000051158015, y: 0.080334425, z: 0.00000049592927}
 --- !u!114 &7176639939640765959
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -131,7 +131,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Hammer.Nail.NailHitDetector
   nail: {fileID: 9026673601910259138}
-  minEnergy: 0.1
+  minEnergy: 0.01
   hitCooldown: 0.1
 --- !u!1 &4009521836958016912
 GameObject:
@@ -719,7 +719,7 @@ BoxCollider:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
@@ -752,14 +752,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Hammer.Nail.Nail
   tip: {fileID: 6110000884375212369}
-  nailCollider: {fileID: 1132684009500732593}
+  nailCollider: {fileID: 1241145548553618695}
   connector: {fileID: 7978786066647345577}
   constructionLayers:
     serializedVersion: 2
     m_Bits: 64
   length: 0.073
-  drivePerJoule: 0.00487
-  maxImpactEnergy: 10
+  drivePerJoule: 0.001461
+  maxImpactEnergy: 15
   contactRadius: 0.008
 --- !u!114 &4087589312095713023
 MonoBehaviour:

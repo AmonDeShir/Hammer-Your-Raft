@@ -41,31 +41,31 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 912e887158c8e564e9819789d55be567, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.368
+      value: 3.763
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 912e887158c8e564e9819789d55be567, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.129
+      value: 0.618
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 912e887158c8e564e9819789d55be567, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.239
+      value: -8.61
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 912e887158c8e564e9819789d55be567, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.99213797
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 912e887158c8e564e9819789d55be567, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.000000037748947
+      value: -0.000000037452164
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 912e887158c8e564e9819789d55be567, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0.12514919
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 912e887158c8e564e9819789d55be567, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0.00000000472425
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 912e887158c8e564e9819789d55be567, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -73,7 +73,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 912e887158c8e564e9819789d55be567, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: -14.379
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 912e887158c8e564e9819789d55be567, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -113,6 +113,15 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 912e887158c8e564e9819789d55be567, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4302979226109347317}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 912e887158c8e564e9819789d55be567, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5246381915212494265}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 912e887158c8e564e9819789d55be567, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5211769236002621563}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 912e887158c8e564e9819789d55be567, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3198308329083525781}
   m_SourcePrefab: {fileID: 100100000, guid: 912e887158c8e564e9819789d55be567, type: 3}
 --- !u!1 &5861713489666428730 stripped
 GameObject:
@@ -142,7 +151,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 2
@@ -156,7 +165,7 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -205,6 +214,77 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Hammer.Nail.Construction
   attached: {fileID: 351298969732785115}
+--- !u!114 &5246381915212494265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5861713489666428730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afcb72afc1c4cdf478f32a826d4ab48c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BuoyancyPart
+  <Mass>k__BackingField: 20
+  <VolumeCollider>k__BackingField: {fileID: 922068037912891492}
+--- !u!114 &5211769236002621563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5861713489666428730}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bac23e17ae114dd449a0cbbc4cf03296, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StormBreakers.WaterInteraction
+  generateWaterForces: 1
+  useJobs: 1
+  flatWater: 0
+  orientBuoyancyForceVertically: 0
+  generateWindForce: 0
+  simulateWakeWave: 1
+  relativeDensity: 0.3
+  dragCoefficients: {x: 0.2, y: 1, z: 0.5}
+  inertiaFactors: {x: 2, y: 1, z: 1.2}
+  gravityCenterShift: {x: 0, y: 0, z: 0}
+  drawSimulationMesh: 0
+  generateParticles: 1
+  bottomCulling: 0
+  topsideCulling: 0
+  minImpactSpeed: 1
+  burstCount: 1
+  sprayCountFactor: 0.1
+  sprayMaxCount: 5
+  sprayLifetimeFactor: 0.03
+  generateAudio: 1
+  audioMinImpactSpeed: 1
+  volumeFactor: 0.1
+  maxVolume: 5
+  volumeFadeoffRate: 1
+  pitchFactor: 10
+  minPitch: 0.2
+  pitchFadeoffRate: 0.1
+  maximalPressure: 50000
+  pressureExcessOccurrences: 0
+  maximalWakeWaveHeight: 1
+  wakeWaveOccurrences: 0
+  drawForce: 1
+  vectorSize: 0.001
+--- !u!114 &3198308329083525781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5861713489666428730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7718c081a93712746b9253552cdab488, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StormBreakers.WaterInteractionPreparer
 --- !u!4 &6490581997526619520 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 912e887158c8e564e9819789d55be567, type: 3}

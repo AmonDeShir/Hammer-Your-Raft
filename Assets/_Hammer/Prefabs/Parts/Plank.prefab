@@ -67,6 +67,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3cd18020027ce9544b2a42dbbd0228be, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7553638753922297170}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3cd18020027ce9544b2a42dbbd0228be, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 9068579770778857253}
   m_SourcePrefab: {fileID: 100100000, guid: 3cd18020027ce9544b2a42dbbd0228be, type: 3}
 --- !u!1 &8221060093055662123 stripped
 GameObject:
@@ -83,7 +86,7 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -94,3 +97,17 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.19779015, y: 0.04773657, z: 0.9873476}
   m_Center: {x: -0.0011384636, y: -0.0000000037252903, z: 0.053976238}
+--- !u!114 &9068579770778857253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8221060093055662123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afcb72afc1c4cdf478f32a826d4ab48c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BuoyancyPart
+  <Mass>k__BackingField: 5
+  <VolumeCollider>k__BackingField: {fileID: 7553638753922297170}

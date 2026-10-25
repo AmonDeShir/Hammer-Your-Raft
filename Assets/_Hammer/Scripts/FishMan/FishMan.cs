@@ -7,20 +7,37 @@ namespace Hammer
     {
         private static readonly int DangerID = Animator.StringToHash("Danger");
         private static readonly int WaveID = Animator.StringToHash("Wave");
-        private static readonly int JumpID = Animator.StringToHash("Jump");
         private static readonly int YesID = Animator.StringToHash("Yes");
         private static readonly int NoID = Animator.StringToHash("No");
 
-        private static readonly int[] IdleAnimations = { WaveID, JumpID, YesID, NoID };
+        private static readonly int[] IdleAnimations = { WaveID, YesID, NoID };
 
         [SerializeField] private Animator animator;
         [SerializeField] private float minIdleInterval = 5f;
         [SerializeField] private float maxIdleInterval = 10f;
 
+        private bool isInDanger = false;
+        
         public bool IsInDanger
         {
-            get => animator.GetBool(DangerID);
-            set => animator.SetBool(DangerID, value);
+            get => isInDanger;
+            set
+            {
+                isInDanger = value;
+                animator.SetBool(DangerID, isInDanger);
+            }
+        }
+
+        private void OnEnable()
+        {
+            EventManager.AddListener(Consts.Events.GameMode.RAFT_READY, Wave);
+            EventManager.AddListener(Consts.Events.GameMode.BUILD_MODE, No);
+        }
+
+        private void OnDisable()
+        {
+            EventManager.RemoveListener(Consts.Events.GameMode.RAFT_READY, Wave);
+            EventManager.RemoveListener(Consts.Events.GameMode.BUILD_MODE, No);
         }
 
         private void Start()
@@ -29,7 +46,6 @@ namespace Hammer
         }
 
         public void Wave() => animator.SetTrigger(WaveID);
-        public void Jump() => animator.SetTrigger(JumpID);
         public void Yes() => animator.SetTrigger(YesID);
         public void No() => animator.SetTrigger(NoID);
 

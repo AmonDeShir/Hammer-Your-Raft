@@ -34,12 +34,15 @@ namespace Hammer
         private void HandleGrab(GrabbableWrapper item)
         {
             item.OnGrab -= HandleGrab;
+            item.transform.parent = null;
 
             if (stopMotionOnSpawn)
             {
                 var rigidBody = item.GetComponent<Rigidbody>();
                 rigidBody.interpolation = RigidbodyInterpolation.Interpolate;
+                rigidBody.isKinematic = false;
             }
+
 
             StartCoroutine(SpawnDelayed());
         }

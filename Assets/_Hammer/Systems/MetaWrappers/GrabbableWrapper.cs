@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Linq;
 using Oculus.Interaction;
 using Oculus.Interaction.HandGrab;
@@ -14,11 +14,13 @@ namespace Hammer.MetaWrappers
         
         private Grabbable grabbable;
         private HandGrabInteractable[] interactables;
+        private DistanceHandGrabInteractable[] distanceInteractables;
         
         private void Awake()
         {
             grabbable = GetComponent<Grabbable>();
-            interactables = GetComponentsInChildren<HandGrabInteractable>();
+            interactables = GetComponentsInChildren<HandGrabInteractable>(true);
+            distanceInteractables = GetComponentsInChildren<DistanceHandGrabInteractable>(true);
                 
             grabbable.WhenPointerEventRaised += HandlePointerEvent;
         }
@@ -53,11 +55,17 @@ namespace Hammer.MetaWrappers
 
         public void ForceDrop()
         {
-            var interactors = interactables.ToArray().SelectMany(interactable => interactable.SelectingInteractors);
+            var interactors = interactables.SelectMany(interactable => interactable.SelectingInteractors).Distinct().ToArray();
+            var distanceInteractors = distanceInteractables.SelectMany(interactable => interactable.SelectingInteractors).Distinct().ToArray();
             
             foreach (var interactor in interactors)
             {
                 interactor.ForceRelease();
+            }
+
+            foreach (var interactor in distanceInteractors)
+            {
+                interactor.Unselect();
             }
         }
 
@@ -67,11 +75,21 @@ namespace Hammer.MetaWrappers
             {
                 interactable.Disable();
             }
+
+            foreach (var interactable in distanceInteractables)
+            {
+                interactable.Disable();
+            }
         }
         
         public void EnableGrab()
         {
             foreach (var interactable in interactables)
+            {
+                interactable.Enable();
+            }
+
+            foreach (var interactable in distanceInteractables)
             {
                 interactable.Enable();
             }
