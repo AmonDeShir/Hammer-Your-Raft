@@ -5,12 +5,10 @@ namespace Hammer.Nail
     public class NailHitDetector : MonoBehaviour
     {
         [SerializeField] private Nail nail;
-        [SerializeField] private Transform tip;
-        [SerializeField] private float minEnergy = 0.1f;
-        [SerializeField] private float contactRadius = 0.008f;
-        [SerializeField] private LayerMask nailableLayers;
-        
-        private float lastHitTime;
+        [SerializeField] private float minEnergy = 0.25f;
+        [SerializeField] private float hitCooldown = 0.1f;
+
+        private float lastHitTime = float.NegativeInfinity;
 
         private void OnTriggerEnter(Collider other)
         {
@@ -18,34 +16,19 @@ namespace Hammer.Nail
 
             if (!hammer || !hammer.IsHead(other))
                 return;
-
-            if (Time.time - lastHitTime < 0.1f)
+ 
+            if (Time.time - lastHitTime < hitCooldown)
                 return;
 
             var energy = hammer.CalculateKineticEnergy();
-            Debug.Log($"Nail hit with {energy} joules");
-            
+
             if (energy < minEnergy)
                 return;
-            
-            var colliders = Physics.OverlapSphere(tip.position, contactRadius, nailableLayers, QueryTriggerInteraction.Ignore);
 
-            foreach (var collider in colliders)
-            {
-                if (!collider.TryGetComponent(out Nailable target))
-                    continue;
+            if (!nail.Hit(energy))
+                return;
 
-                lastHitTime = Time.time;
-                nail.Hit(energy, target);
-                
-                break;
-            }
-        }
-
-        private void OnDrawGizmosSelected()
-        {
-            Gizmos.color = Color.orange;
-            Gizmos.DrawWireSphere(tip.position, contactRadius);
+            lastHitTime = Time.time;
         }
     }
 }
